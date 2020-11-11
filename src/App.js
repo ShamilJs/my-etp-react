@@ -3,8 +3,6 @@ import './style.css';
 import { TopHeader } from './Components/Header/TopHeader';
 import { MainMenu } from './Components/Header/MainMenu';
 import { Preloader } from './Components/Other/Preloader';
-import { RegistrIndividual } from './Components/Form/RegistrIndividual';
-import { RegistrCompany } from './Components/Form/RegistrCompany';
 import { ModalReference } from './Components/Other/ModalReference';
 import { Home } from './Components/Home/Home';
 import { ForSuppliers } from './Components/ForSuppliers/ForSuppliers';
@@ -18,15 +16,16 @@ import {
 	Switch,
 	Route,
   } from "react-router-dom";
-import { Footer } from './Components/Footer/Footer';
+import { RequisitionCard } from './Components/Requisition/RequisitionCard';
 import { useSelector } from 'react-redux';
+import { Footer } from './Components/Footer/Footer';
 
 
   
 
 const App = () => {
 
-	const windowRegistr = useSelector(state => state.app.windowRegistr);
+	const requisitionCard = useSelector(state => state.app.requisitionCard);
 
 	return (
 		<>
@@ -36,8 +35,7 @@ const App = () => {
 				<TopHeader/>
 				<MainMenu/>
 			</header>
-			{(windowRegistr === '1') && <RegistrIndividual/>}
-			{(windowRegistr === '2') && <RegistrCompany/>}
+			{requisitionCard && <RequisitionCard/>}
 			{false && <ModalReference/>}
 				{false && <Preloader/>}
 			
@@ -63,11 +61,9 @@ const App = () => {
 					<Route path="/private_office">
 						<PrivateOffice/>            
 					</Route>
-					<Route path="/registration/individual">
-						<PrivateOffice/>            
-					</Route>
+					
 				</Switch>
-			{/* <Footer/> */}
+			<Footer/>
 		</Router>
 		
 		</>

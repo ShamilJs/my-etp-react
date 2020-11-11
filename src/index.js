@@ -5,15 +5,18 @@ import { compose, createStore } from 'redux';
 import { rootReducer } from './redux/rootReducer';
 import App from './App';
 
+
 const store = createStore(rootReducer, compose(
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
 const app = (
 	<Provider store={store}>
-		<React.StrictMode>
-			<App />
-		</React.StrictMode>
+
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+			
 	</Provider>
 );
 

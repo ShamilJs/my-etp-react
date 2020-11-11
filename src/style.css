@@ -1466,3 +1466,30 @@ img {
 .auth__menu li:hover{
   background-color:  #ffaf02;
 }
+
+
+/* Пагинация */
+.pagination{
+	margin: 20px;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	width: 900px;
+  	flex-wrap: wrap;
+}
+
+.pagination_item{
+  	font-size: 18px;
+    font-weight: 700;
+    color: #232323;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.pagination_item:hover, .pagination_item:active{
+	color:  #ffaf02;
+}
+
+
+
+

@@ -43,8 +43,11 @@ export const RegistrCompany = () => {
                     </div>
 
                     <div  className="custom-control custom-checkbox mt-30 ">
-                      <input type="checkbox"  className="custom-control-input" id="customCheck2"/>
-                      <label  className="custom-control-label" htmlFor="customCheck2">Я согласен <span  className="custom-control-label-span"> на обработку  </span> персональных данных: политика конфиденциальности</label>
+                    	<input type="checkbox"  className="custom-control-input" id="customCheck2"/>
+                    	<label  className="custom-control-label" htmlFor="customCheck2">Я согласен 
+                    		<span  className="custom-control-label-span"> на обработку</span> 
+							персональных данных: политика конфиденциальности
+						</label>
                     </div>
                     <div  className="custom-control custom-checkbox mt-15">
                       <input type="checkbox"  className="custom-control-input" id="customCheck3"/>
