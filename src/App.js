@@ -6,7 +6,7 @@ import { Preloader } from './Components/Other/Preloader';
 import { ModalReference } from './Components/Other/ModalReference';
 import { Home } from './Components/Home/Home';
 import { ForSuppliers } from './Components/ForSuppliers/ForSuppliers';
-import { Registration } from './Components/Form/Registration';
+import { AuthOrRegistr } from './Components/Form/AuthOrRegistr';
 import { Contact } from './Components/Contact/Contact';
 import { Requisition } from './Components/Requisition/Requisition';
 import { FAQ } from './Components/FAQ/FAQ';
@@ -19,6 +19,7 @@ import {
 import { RequisitionCard } from './Components/Requisition/RequisitionCard';
 import { useSelector } from 'react-redux';
 import { Footer } from './Components/Footer/Footer';
+import { Accreditation } from './Components/Form/Accreditation';
 
 
   
@@ -46,6 +47,9 @@ const App = () => {
 					<Route path="/information_for_suppliers">
 						<ForSuppliers/>            
 					</Route>
+					<Route path="/accreditation">
+						<Accreditation/>            
+					</Route>
 					<Route path="/requisition">
 						<Requisition/>            
 					</Route>
@@ -53,7 +57,7 @@ const App = () => {
 						<Contact/>            
 					</Route>
 					<Route path="/registration">
-						<Registration/>            
+						<AuthOrRegistr/>            
 					</Route>
 					<Route path="/faq">
 						<FAQ/>            

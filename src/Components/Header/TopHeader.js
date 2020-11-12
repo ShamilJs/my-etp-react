@@ -18,8 +18,8 @@ export const TopHeader = () => {
                                 <p>Добро пожаловать на <span>ЭТП</span></p>
                             </div>
                             <div className="login-faq-earn-money">
-                                <Link to="/registration" onClick={() => {dispatch(openWindowRegistration('0'))}}>Авторизация | Регистрация</Link>
-                                <Link to="/faq">FAQ</Link>
+                                <Link onClick={() => dispatch(openWindowRegistration(false))} to="/registration" onClick={() => {dispatch(openWindowRegistration('0'))}}>Авторизация | Регистрация</Link>
+                                <Link onClick={() => dispatch(openWindowRegistration(false))} to="/faq">FAQ</Link>
                             </div>
                                 <div className="auth__menu">
                                     <li><Link to="/private_office">Личный кабинет</Link></li>

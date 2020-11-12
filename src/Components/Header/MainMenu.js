@@ -13,9 +13,12 @@ import {
 	Route,
 	Link
   } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { openWindowRegistration } from '../../redux/actions';
 
 
 export const MainMenu = () => {
+    const dispatch = useDispatch();
     return (
         <>
         <div className="cryptos-main-menu">
@@ -45,10 +48,11 @@ export const MainMenu = () => {
 
                             <div className="classNameynav">
                                 <ul>
-                                    <li><Link to="/">Главная</Link></li>
-                                    <li><Link to="/information_for_suppliers">Поставщикам</Link></li>
-                                    <li><Link to="/requisition">Заявки</Link></li>
-                                    <li><Link to="/contacts">Контакты</Link></li>
+                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/">Главная</Link></li>
+                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/information_for_suppliers">Поставщикам</Link></li>
+                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/accreditation">Аккредитация</Link></li>
+                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/requisition">Заявки</Link></li>
+                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/contacts">Контакты</Link></li>
                                 </ul>
 
                                 <div className="header-newsletter-form">

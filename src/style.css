@@ -1349,7 +1349,7 @@ img {
     margin-bottom: 0; }
 
 /* Accordians */
-.single-accordion.panel {
+/* .single-accordion.panel {
   background-color: #ffffff;
   border: 0 solid transparent;
   border-radius: 4px;
@@ -1400,39 +1400,8 @@ img {
   box-shadow: none; }
   .single-accordion .accordion-content p {
     padding: 20px 15px 5px;
-    margin-bottom: 0; }
+    margin-bottom: 0; } */
 
-/* Tabs CSS*/
-.cryptos-tabs-content {
-  position: relative;
-  z-index: 1; }
-  .cryptos-tabs-content .nav-tabs {
-    border-bottom: none;
-    margin-bottom: 50px; }
-    .cryptos-tabs-content .nav-tabs .nav-link {
-      background-color: #eef3f6;
-      color: #8e8e8e;
-      border-bottom: 3px solid #ffaf02;
-      padding: 0 15px;
-      height: 50px;
-      line-height: 50px;
-      margin: 0 2px;
-      border-radius: 0;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: "Open Sans", sans-serif; }
-      @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        .cryptos-tabs-content .nav-tabs .nav-link {
-          padding: 0 10px; } }
-      @media only screen and (max-width: 767px) {
-        .cryptos-tabs-content .nav-tabs .nav-link {
-          padding: 0 10px; } }
-      .cryptos-tabs-content .nav-tabs .nav-link.active {
-        background-color: #ffaf02;
-        color: #292929;
-        border-bottom: 3px solid #292929; }
-  .cryptos-tabs-content .tab-content h6 {
-    font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */
 

@@ -2,7 +2,7 @@ import { OPEN_WINDOW_REGISRATION,
     OPEN_REQUISITION_CARD } from './types';
 
 const initiaState = {
-    windowRegistr: '0',
+    windowRegistr: false,
     requisitionCard: false
 };
 

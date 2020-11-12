@@ -64,6 +64,10 @@ textarea.form-control {
 	box-shadow: none; 
 }
 
+.accreditation__subtitle{
+	margin-bottom: 50px;
+}
+
 /* input:focus,
 textarea:focus {
   outline: none;
@@ -82,3 +86,122 @@ textarea:focus {
 .custom-control-label {
 	padding-top: 3px;
 }
+
+
+
+
+/* Tabs CSS*/
+
+.custom-tabs {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.custom-tabs__content {
+	margin: 50px;
+	/* position: relative;
+	z-index: 1; */
+}
+
+.nav-tabs {
+	border-bottom: none;
+	margin-bottom: 50px;
+	display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+	cursor: pointer;
+	background-color: #eef3f6;
+	color: #8e8e8e;
+	border-bottom: 3px solid #ffaf02;
+	padding: 0 15px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 2px;
+	border-radius: 0;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+	width: 45%;
+	text-align: center;
+}
+
+.active {
+	background-color: #ffaf02;
+	color: #292929;
+	border-bottom: 3px solid #292929;
+}
+  
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.nav-item {
+		padding: 0 10px;
+	}
+}
+  
+@media only screen and (max-width: 767px) {
+	.nav-item {
+		padding: 0 10px;
+	}
+}
+  
+/* Authorization form */
+.auth-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth__content{
+	
+	width: 35%;
+	height: 350px;
+	border: 1px solid #292929;
+	padding: 30px;
+	border-radius: 5px;
+	margin: 0 0 50px 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.registr__content{
+	
+	width: 35%;
+	height: 500px;
+	border: 1px solid #292929;
+	padding: 20px;
+	border-radius: 5px;
+	margin: 0 0 50px 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.auth__title{
+	text-align: center;
+	font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #232323;
+}
+
+.auth_button{
+	margin: 30px 40px 0 20px;
+	width: 90px;
+    height: 35px;
+    border: none;
+    background-color: #eef3f6;
+    font-size: 12px;
+    font-weight: 600;
+    color: #292929;
+    cursor: pointer;
+    border-bottom: 2px solid #ffaf02;
+    transition-duration: 500ms;
+}
+.auth_button:hover{
+	background-color: #292929;
+    color: #ffaf02;
+}
+
+.subtext span{
+	color: red;
+}
+

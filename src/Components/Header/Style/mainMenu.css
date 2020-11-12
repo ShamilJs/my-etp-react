@@ -32,15 +32,18 @@
 }
 
 .classNameynav{
-    width: 800px;
+    width: 850px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .classNameynav ul{
     display: flex;
-    width: 430px;
+    min-width: 430px;
     justify-content: space-between ;  
+}
+.classNameynav ul li{
+	margin-right: 20px;
 }
 
 .classNameynav ul li a{
