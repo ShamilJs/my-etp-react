@@ -8,6 +8,7 @@ import { TextArea } from './TextArea';
 
 export const RegistrCompany = ({ windowRegistr }) => {
 	const [newCompany, setNewCompany] = useState({});
+	
 	if (!windowRegistr) return null;
 
     return (

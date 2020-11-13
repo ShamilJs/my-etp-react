@@ -14,6 +14,7 @@ export const BlockInput = ({ type, user, setUser}) => {
         (type === 'IP') ? 'Наименование организации/ИП ' :
         (type === 'inn') ? 'ИНН' :
         (type === 'password') ? 'Пароль' :
+        (type === 'orderName') ? 'Название заявки' :
         'ОГРН (ОГРНИП)';
 
     return (

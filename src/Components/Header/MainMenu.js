@@ -25,8 +25,8 @@ export const MainMenu = () => {
             <div className="classNamey-nav-container breakpoint-off">
                 <div className="container">
                     <nav className="classNamey-navbar" id="cryptosNav">
-                         {/* <p className="nav-brand">Здесь лого</p>   */}
-                        <a className="nav-brand" href="/"><img src="./img/Logo_Supl.png" alt="Logo_Supl"/></a>
+                         <p className="nav-brand">Здесь лого</p>  
+                        {/* <a className="nav-brand" href="/"><img src="./img/Logo_Supl.png" alt="Logo_Supl"/></a> */}
 
                         {/* Burger */}
                         <div className="classNamey-navbar-toggler">

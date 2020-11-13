@@ -313,7 +313,7 @@ img {
       border-bottom: 3px solid #ffaf02; }
 
  /* :: 5.0 Header Area CSS */
-.nav-brand{
+/* .nav-brand{
   width: 200px;
 }
 .header-area {
@@ -545,7 +545,7 @@ img {
   transition-duration: 500ms; }
 .megamenu-slides .owl-next {
   left: auto;
-  right: 5%; }
+  right: 5%; } */
 
 /* :: 6.0 Welcome Area CSS */
 /*Главный слайдер*/
@@ -1459,6 +1459,36 @@ img {
 	color:  #ffaf02;
 }
 
+.breadcumb-text{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.exit__block{
+  width: 70px;
+  height: 70px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
 
+.exit__block img{
+  width: 60%;
+}
+
+.exit__block:hover{
+  width: 75px;
+  transition-duration: 500ms;
+}
+
+.exit__title{
+    font-family: "Open Sans", sans-serif;
+    color: #ffff;
+    font-size: 12px;
+    line-height: 3;
+    font-weight: 400;
+}
 
 
