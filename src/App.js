@@ -38,7 +38,7 @@ const App = () => {
 			</header>
 			{requisitionCard && <RequisitionCard/>}
 			{false && <ModalReference/>}
-				{false && <Preloader/>}
+			<Preloader/>
 			
 				<Switch>
 					<Route exact path="/">

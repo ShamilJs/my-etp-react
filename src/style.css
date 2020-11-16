@@ -41,13 +41,12 @@ p {
   font-weight: 500; }
 
 a,
-a:hover,
-a:focus {
-  -webkit-transition-duration: 500ms;
+a:hover{
+  /* -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  text-decoration: none;
+  text-decoration: none; */
   outline: 0 solid transparent;
-  color: #292929;
+  /* color: #292929; */
   font-weight: 400;
   font-size: 16px; }
 
@@ -1455,8 +1454,14 @@ img {
 	cursor: pointer;
 }
 
-.pagination_item:hover, .pagination_item:active{
-	color:  #ffaf02;
+.pagination_item:hover, .pagination_item:active, .pagination_item:focus{
+  /* color:  #ffaf02; */
+  color: #232323;
+  background-color: transparent;
+}
+
+.active{
+  background-color: transparent!important;
 }
 
 .breadcumb-text{

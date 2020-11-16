@@ -1,20 +1,8 @@
 import React from 'react';
 import './Style/mainMenu.css';
-// import { Home } from '../Home/Home';
-// import { ForSuppliers } from '../ForSuppliers/ForSuppliers';
-// import { Requisition } from '../Requisition/Requisition';
-// import { Contact } from '../Contact/Contact';
-// import { Home } from '../Home';
-
-
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { openWindowRegistration } from '../../redux/actions';
+import { openWindowRegistration} from '../../redux/actions';
 
 
 export const MainMenu = () => {
@@ -48,11 +36,31 @@ export const MainMenu = () => {
 
                             <div className="classNameynav">
                                 <ul>
-                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/">Главная</Link></li>
+                                    <li>
+										<Link 
+											onClick={() => dispatch(openWindowRegistration(false))}
+											to="/">Главная
+										</Link>
+									</li>
                                     <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/information_for_suppliers">Поставщикам</Link></li>
-                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/accreditation">Аккредитация</Link></li>
-                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/requisition">Заявки</Link></li>
-                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/contacts">Контакты</Link></li>
+									<li>
+										<Link 
+											onClick={() => dispatch(openWindowRegistration(false))}
+											to="/accreditation">Аккредитация
+										</Link>
+									</li>
+                                    <li>
+										<Link 
+                                            onClick={() => dispatch(openWindowRegistration(false))} 
+                                            to="/requisition">Заявки
+                                        </Link>
+                                    </li>
+                                    <li>
+										<Link 
+											onClick={() => dispatch(openWindowRegistration(false))}
+											to="/contacts">Контакты
+										</Link>
+									</li>
                                 </ul>
 
                                 <div className="header-newsletter-form">
@@ -67,20 +75,6 @@ export const MainMenu = () => {
                 </div>
             </div>
         </div>
-        {/* <Switch>
-            <Route exact path="/">
-                <Home/>            
-            </Route>
-            <Route path="/information_for_suppliers">
-                <ForSuppliers/>            
-            </Route>
-            <Route path="/requisition">
-                <Requisition/>            
-            </Route>
-			<Route path="/contacts">
-                <Contact/>            
-            </Route>
-        </Switch> */}
         </>
     );
 
