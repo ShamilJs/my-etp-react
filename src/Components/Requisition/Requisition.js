@@ -19,6 +19,7 @@ export const Requisition = () => {
             dispatch(getOrdersFromServer(response));
             dispatch(hideLoader());
         })
+        // eslint-disable-next-line
     }, [])
 
     return (
