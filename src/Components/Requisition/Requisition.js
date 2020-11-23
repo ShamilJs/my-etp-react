@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { openRequisitionCard } from '../../redux/actions';
 import { MainTitle } from '../Header/MainTitle';
 import './Style/requisition.css';
-import { BrowserRouter as Router, NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import { getDataFromServer } from '../../server';
 import { getOrdersFromServer, hideLoader, showLoader } from '../../redux/actions';
 
@@ -12,7 +12,7 @@ export const Requisition = () => {
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders.orders);
 
-    let { path, url } = useRouteMatch();
+    let {  url } = useRouteMatch();
     
     useEffect(() => {
         dispatch(showLoader());

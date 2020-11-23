@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 
 export const MainMenu = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     return (
         <>
         <div className="cryptos-main-menu">

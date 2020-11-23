@@ -1,12 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useRouteMatch } from "react-router-dom";
-import { openWindowRegistration } from '../../redux/actions';
+// import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
+// import { openWindowRegistration } from '../../redux/actions';
 
 import './Style/header.css';
 
 export const TopHeader = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     return (
         <div className="top-header">

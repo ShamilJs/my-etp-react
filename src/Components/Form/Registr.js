@@ -6,7 +6,7 @@ import { Checkbox } from './Checkbox';
 import { checkInput } from '../../checkInput';
 import { createPromptArray, openModalHello } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { postregistrInServer, getDataFromServer, getDataFromServe, postAxios, getAxios} from '../../server';
+import { postAxios, getAxios} from '../../server';
 
 export const Registr = () => {
 	const promptArr = useSelector(state => state.app.promptArray);
