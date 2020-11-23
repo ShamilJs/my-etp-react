@@ -10,7 +10,7 @@ import {
   } from "react-router-dom";
 import { MainTitle } from '../Header/MainTitle';
 import { useDispatch, useSelector } from 'react-redux';
-import { openWindowRegistration } from '../../redux/actions';
+// import { openWindowRegistration } from '../../redux/actions';
 
 
 export const Accreditation = () => {
@@ -46,7 +46,7 @@ export const Accreditation = () => {
                             <option value="1">Физическое лицо</option>
                             <option value="2">Юридическое лицо</option>
                         </select>
-                            <Link onClick={() => dispatch(openWindowRegistration(true))} className="btn cryptos-btn btn-2 mt-30 " to={`/аccreditation/${(open === '1') ? 'individual' : (open === '2') ? 'company' : ''}`}> Далее </Link>
+                            {/* <Link onClick={() => dispatch(openWindowRegistration(true))} className="btn cryptos-btn btn-2 mt-30 " to={`/аccreditation/${(open === '1') ? 'individual' : (open === '2') ? 'company' : ''}`}> Далее </Link> */}
                     </div> 
                 </>
 			}

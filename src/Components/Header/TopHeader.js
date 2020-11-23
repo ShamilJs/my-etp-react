@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import { openWindowRegistration } from '../../redux/actions';
 
 import './Style/header.css';
@@ -21,16 +21,19 @@ export const TopHeader = () => {
 								<Link 
 									className="unblock"
                                     to="/registration" 
-                                    onClick={() => dispatch(openWindowRegistration(false))}
+                                    // onClick={() => dispatch(openWindowRegistration(false))}
 								>Авторизация | Регистрация
 								</Link>
-								<Link 
+                                <Link 
+                                    // className="unblock"
 									to="/private_office"
 								>	<div className="login">
 										<img className="login__img" src="./pngegg.png" alt=""/>
 									</div>
                                 </Link>
-                                <Link onClick={() => dispatch(openWindowRegistration(false))} to="/faq">FAQ</Link>
+                                <Link 
+                                // onClick={() => dispatch(openWindowRegistration(false))} 
+                                to="/faq">FAQ</Link>
                             </div>
                                 <div className="auth__menu">
                                     

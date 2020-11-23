@@ -8,7 +8,7 @@ export const Preloader = () => {
     if (!loader) return null;
     
     return (
-        <div id="preloader">
+        <div id="preloader" className="main__preloader">
 			<i className="circle-preloader"></i>
 		</div>
     );

@@ -1,8 +1,38 @@
 .block_input{
-    width: 100%;
+	width: 100%;
+	margin-top: 15px;
 }
+
 .label{
 	color: red;
+}
+
+label {
+	display: inline-block;
+	width: 100%;
+	display: flex;
+	
+}
+
+.block__input-disrcr{
+	color: red;
+	/* margin-left: 10px; */
+	font-size: 10px;
+	/* padding: 4px 5px 0 5px; */
+}
+
+.custom-control-label.after-color::after{
+	position: absolute;
+    top: .25rem;
+    left: 0;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border: 1px solid red;
 }
 
 .form-control {
@@ -11,7 +41,7 @@
 	background-color: #eef3f6;
 	font-size: 14px;
 	font-style: italic;
-	margin-bottom: 15px;
+	
 	border: none;
 	border-bottom: 3px solid #eef3f6;
 	border-radius: 0;
@@ -39,7 +69,8 @@
     font-size: 14px;
     margin-bottom: 50px;
     color: black;
-    text-align: center;
+	text-align: center;
+	margin: 20px;
 }
 
 .container__form{
@@ -68,30 +99,12 @@ textarea.form-control {
 	margin-bottom: 50px;
 }
 
-/* input:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: transparent; 
-  background-color: #eef3f6;
-} */
-
-/* input:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: transparent; 
-  background-color: #eef3f6;
-} */
-
 .custom-control-label {
 	padding-top: 3px;
 }
 
 
-
-
 /* Tabs CSS*/
-
 .custom-tabs {
 	margin: 0 auto;
 	width: 100%;
@@ -99,8 +112,6 @@ textarea:focus {
 
 .custom-tabs__content {
 	margin: 50px;
-	/* position: relative;
-	z-index: 1; */
 }
 
 .nav-tabs {
@@ -145,6 +156,7 @@ textarea:focus {
 	}
 }
   
+
 /* Authorization form */
 .auth-center {
 	display: flex;
@@ -154,7 +166,6 @@ textarea:focus {
 }
 
 .auth__content{
-	
 	width: 35%;
 	height: 350px;
 	border: 1px solid #292929;
@@ -165,14 +176,16 @@ textarea:focus {
 }
 
 .registr__content{
-	
-	width: 35%;
-	height: 500px;
 	border: 1px solid #292929;
-	padding: 20px;
+	padding: 40px;
 	border-radius: 5px;
 	margin: 0 0 50px 0;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.registr__select{
+	margin: 20px 0 10px 0;
+	width: 35%;
 }
 
 .auth__title{
@@ -184,6 +197,7 @@ textarea:focus {
 }
 
 .auth_button{
+	display: inline-block;
 	margin: 30px 40px 0 20px;
 	width: 90px;
     height: 35px;
@@ -196,6 +210,7 @@ textarea:focus {
     border-bottom: 2px solid #ffaf02;
     transition-duration: 500ms;
 }
+
 .auth_button:hover{
 	background-color: #292929;
     color: #ffaf02;
@@ -205,3 +220,10 @@ textarea:focus {
 	color: red;
 }
 
+.subtext{
+	display: inline-block;
+}
+
+.point{
+	pointer-events: none;
+}

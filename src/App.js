@@ -3,7 +3,7 @@ import './style.css';
 import { TopHeader } from './Components/Header/TopHeader';
 import { MainMenu } from './Components/Header/MainMenu';
 import { Preloader } from './Components/Other/Preloader';
-import { ModalReference } from './Components/Other/ModalReference';
+// import { ModalReference } from './Components/Other/ModalReference';
 import { Home } from './Components/Home/Home';
 import { ForSuppliers } from './Components/ForSuppliers/ForSuppliers';
 import { AuthOrRegistr } from './Components/Form/AuthOrRegistr';
@@ -19,7 +19,10 @@ import {
 import { RequisitionCard } from './Components/Requisition/RequisitionCard';
 import { useSelector } from 'react-redux';
 import { Footer } from './Components/Footer/Footer';
-import { Accreditation } from './Components/Form/Accreditation';
+import { PrivacyPolicy } from './Components/Other/PrivacyPolicy';
+import { PurchaseRequisition } from './Components/Requisition/PurchaseRequisition';
+import { ModalDiscription } from './Components/Other/ModalDiscription';
+import { ModalHello } from './Components/Other/ModalHello';
 
 
   
@@ -31,15 +34,17 @@ const App = () => {
 	return (
 		<>
 		<Router>
-			
 			<header className="header-area">
 				<TopHeader/>
 				<MainMenu/>
 			</header>
 			{requisitionCard && <RequisitionCard/>}
-			{false && <ModalReference/>}
+			{/* {false && <ModalReference/>} */}
+			<PurchaseRequisition/>
 			<Preloader/>
-			
+			<PrivacyPolicy/>
+			<ModalDiscription/>
+			<ModalHello/>
 				<Switch>
 					<Route exact path="/">
 						<Home/>            
@@ -47,9 +52,9 @@ const App = () => {
 					<Route path="/information_for_suppliers">
 						<ForSuppliers/>            
 					</Route>
-					<Route path="/accreditation">
+					{/* <Route path="/accreditation">
 						<Accreditation/>            
-					</Route>
+					</Route> */}
 					<Route path="/requisition">
 						<Requisition/>            
 					</Route>

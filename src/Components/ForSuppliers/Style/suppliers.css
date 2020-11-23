@@ -1,0 +1,22 @@
+.accreditation__title{
+	color: black;
+	font-size: 24px;
+	font-weight: 700;
+	margin: 30px 0 30px 0;
+}
+
+.accreditation__ref{
+	font-size: 18px;
+	color: steelblue;
+	text-decoration: underline;
+}
+.accreditation__ref:hover{
+	color: #ffaf02;
+	text-decoration: underline;
+	transition-duration: 500ms;
+}
+
+.accreditation__subtitle span{
+	color: black;
+	font-size: 22px;
+}

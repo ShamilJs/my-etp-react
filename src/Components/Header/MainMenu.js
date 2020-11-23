@@ -2,7 +2,7 @@ import React from 'react';
 import './Style/mainMenu.css';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { openWindowRegistration} from '../../redux/actions';
+// import { openWindowRegistration} from '../../redux/actions';
 
 
 export const MainMenu = () => {
@@ -38,26 +38,23 @@ export const MainMenu = () => {
                                 <ul>
                                     <li>
 										<Link 
-											onClick={() => dispatch(openWindowRegistration(false))}
 											to="/">Главная
 										</Link>
 									</li>
-                                    <li><Link onClick={() => dispatch(openWindowRegistration(false))} to="/information_for_suppliers">Поставщикам</Link></li>
-									<li>
+                                    <li><Link 
+                                    to="/information_for_suppliers">Поставщикам</Link></li>
+									{/* <li>
 										<Link 
-											onClick={() => dispatch(openWindowRegistration(false))}
 											to="/accreditation">Аккредитация
 										</Link>
-									</li>
+									</li> */}
                                     <li>
 										<Link 
-                                            onClick={() => dispatch(openWindowRegistration(false))} 
-                                            to="/requisition">Заявки
+                                            to="/requisition">Закупки
                                         </Link>
                                     </li>
                                     <li>
 										<Link 
-											onClick={() => dispatch(openWindowRegistration(false))}
 											to="/contacts">Контакты
 										</Link>
 									</li>

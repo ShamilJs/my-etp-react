@@ -1,11 +1,20 @@
-import { OPEN_WINDOW_REGISRATION,
+import { OPEN_PRIVACY_POLICY,
     OPEN_REQUISITION_CARD,
+    OPEN_PURCHASE_REQUISITION,
     SHOW_LOADER,
-    HIDE_LOADER } from './types';
+    HIDE_LOADER,
+    OPEN_MODAL_DISCRIPTION,
+    CREATE_PROMPT_ARRAY,
+    OPEN_MODAL_HELLO } from './types';
 
 const initiaState = {
-    windowRegistr: false,
+	privacyPolicy: false,
+    modalDiscription: false,
+    modalHello: false,
+	promptArray: [],
+    place: '',
     requisitionCard: false,
+    purchaseRequisition: false,
 	loader: false,
     order: {}
 };
@@ -14,10 +23,18 @@ const initiaState = {
 
 export const appReduser = (state = initiaState, action) => {
     switch (action.type) {
-        case OPEN_WINDOW_REGISRATION: 
-            return {...state, windowRegistr: action.payload};
+        case OPEN_PRIVACY_POLICY: 
+            return {...state, privacyPolicy: action.payload};
+        case OPEN_MODAL_DISCRIPTION: 
+            return {...state, modalDiscription: action.payload, place: action.place};
+        case OPEN_MODAL_HELLO: 
+			return {...state, modalHello: action.payload, place: action.place};
+		case CREATE_PROMPT_ARRAY: 
+            return {...state, promptArray: action.payload};
         case OPEN_REQUISITION_CARD: 
             return {...state, requisitionCard: action.payload, order: action.content};
+        case OPEN_PURCHASE_REQUISITION: 
+            return {...state, purchaseRequisition: action.payload};
         case SHOW_LOADER: 
 			return {...state, loader: true};
 		case HIDE_LOADER: 

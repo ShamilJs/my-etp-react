@@ -1,22 +1,62 @@
-import { OPEN_WINDOW_REGISRATION,
+import { OPEN_PRIVACY_POLICY,
     OPEN_REQUISITION_CARD,
+    OPEN_PURCHASE_REQUISITION,
     GET_ORDERS_FROM_SERVER,
     SHOW_LOADER,
-    HIDE_LOADER } from './types';
+    HIDE_LOADER,
+    GET_QUESTIONS_FROM_SERVER,
+    GET_ANSWERS_FROM_SERVER,
+    ADD_NEW_QUESTION,
+    OPEN_MODAL_DISCRIPTION,
+    ADD_NEW_ANSWER,
+    CHANGE_QUESTION_STATUS,
+    CREATE_PROMPT_ARRAY,
+    OPEN_MODAL_HELLO } from './types';
 
 
-export const openWindowRegistration = select => {
+export const openPrivacyPolicy = open => {
     return {
-        type: OPEN_WINDOW_REGISRATION,
-        payload: select
+        type: OPEN_PRIVACY_POLICY,
+        payload: open
     };
 };
+
+export const openModalDiscription = (open, place) => {
+    return {
+        type: OPEN_MODAL_DISCRIPTION,
+        payload: open,
+        place: place
+    };
+};
+
+export const openModalHello = (open, place) => {
+    return {
+        type: OPEN_MODAL_HELLO,
+        payload: open,
+        place: place
+    };
+};
+
+export const createPromptArray = arr => {
+    return {
+        type: CREATE_PROMPT_ARRAY,
+        payload: arr,
+    };
+};
+
 
 export const openRequisitionCard = (open, order) => {
     return {
         type: OPEN_REQUISITION_CARD,
         payload: open,
         content: order
+    };
+};
+
+export const openPurchaseRequisition = (open) => {
+    return {
+        type: OPEN_PURCHASE_REQUISITION,
+        payload: open,
     };
 };
 
@@ -36,6 +76,42 @@ export const getOrdersFromServer = orders => {
     return {
         type: GET_ORDERS_FROM_SERVER,
         payload: orders
+    };
+};
+
+export const getQuestionsFromServer = questions => {
+    return {
+        type: GET_QUESTIONS_FROM_SERVER,
+        payload: questions
+    };
+};
+
+export const getAnswersFromServer = answers => {
+    return {
+        type: GET_ANSWERS_FROM_SERVER,
+        payload: answers
+    };
+};
+
+export const addNewQuestion = question => {
+    return {
+        type: ADD_NEW_QUESTION,
+        payload: question
+    };
+};
+
+export const addNewAnswer = answer => {
+    return {
+        type: ADD_NEW_ANSWER,
+        payload: answer
+    };
+};
+
+export const changeQuestionStatus = (id) => {
+    return {
+        type: CHANGE_QUESTION_STATUS,
+        payload: true,
+        id: id
     };
 };
 

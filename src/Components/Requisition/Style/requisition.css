@@ -1,5 +1,6 @@
 .requisition{
     margin: 50px;
+    /* position: relative; */
 }
 .requisition__list{
     width: 100%;   
@@ -9,6 +10,36 @@
     margin-bottom: 20px;
     background-color: #eef3f6;
     min-height: 130px;
+}
+
+.requisition__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.requisition__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    font-size: 10px;
+    margin-right: 20px;
+}
+
+.requisition__status{
+    padding: 3px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.requisition__date{
+    margin-right: 20px;
+}
+
+.status-new{
+    color: wheat;
+    background-color: green;
 }
 
 .requisition__button{
@@ -48,12 +79,14 @@
     width: 1000px;
     height: 700px;
     position: fixed;
-    top: 5%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
     background-color: #fff;
     z-index: 999;
     border: 1px solid #292929;
     border-radius: 10px;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .requisition__content{
@@ -61,12 +94,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    padding: 0 0 50px 0;
 }
-
+.modal__text{
+    padding: 0 20px 0 20px;
+    overflow-y: auto;
+    height: 100%;
+}
 .requisition-card__close{
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 40px;
     cursor: pointer;
     font-size: 24px;
 }
@@ -75,8 +114,57 @@
     color: #ffaf02;
 }
 
+.requisition-card__control{
+	position: absolute;
+	bottom: 40px;
+	right: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 100%; */
+}
+
+.purchase-control{
+    width: 90%;
+    justify-content: space-between;
+}
+
+.requisition-card__ref{
+	color: red;
+	text-decoration: underline;
+}
+.requisition-card__response{
+	cursor: pointer;
+	padding: 8px;
+    height: 35px;
+    border: none;
+    background-color: #ffaf02;
+    font-size: 12px;
+    font-weight: 600;
+    color: #292929;
+    border-bottom: 2px solid #ffaf02;
+    transition-duration: 500ms;
+}
+.requisition-card__response:hover {
+    background-color: #292929;
+    color: #ffaf02;
+}
+
+.requisition-card__cancel{
+    cursor: pointer;
+	padding: 8px 15px;
+    height: 35px;
+    border: none;
+    background-color: brown;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    border-bottom: 2px solid #ffaf02;
+    transition-duration: 500ms;
+}
 .requisition-card__content{
-    padding: 50px;
+	padding: 70px 70px 90px 50px;
+	height: 100%;
 }
 
 .requisition-card__title{
@@ -85,6 +173,16 @@
     color: #232323;
     line-height: 30px;
     text-align: center;
+}
+
+.requisition-card__company{
+    color: #232323;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.requisition-card__company span{
+    color: #8e8e8e;
 }
 
 .requisition-card__title span{
