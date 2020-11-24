@@ -1,7 +1,7 @@
 import React from 'react';
 import './Style/mainMenu.css';
 import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { openWindowRegistration} from '../../redux/actions';
 
 

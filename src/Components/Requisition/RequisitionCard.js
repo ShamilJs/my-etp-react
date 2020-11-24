@@ -47,12 +47,12 @@ export const RequisitionCard = () => {
                 </div>
                 <div onClick={() => dispatch(openRequisitionCard(false))} className="requisition-card__close">X</div>
 				<div className="requisition-card__control">
-					{/* <Link
+					<Link
 						className="requisition-card__ref"
 						to="/information_for_suppliers"
 						onClick={() => dispatch(openRequisitionCard(false))}
 					>К сожалению, Вы не можете участвовать в закупках,
-						т.к. Ваша аккредитация еще не одобрена...</Link> */}
+						т.к. Ваша аккредитация еще не одобрена...</Link>
 					<div 
 						className="requisition-card__response"
 						onClick={() => dispatch(openPurchaseRequisition(true))}
