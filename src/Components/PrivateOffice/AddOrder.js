@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { checkInput } from '../../checkInput';
 import { createPromptArray } from '../../redux/actions';
-import { postDataInServer } from '../../server';
+import { postDataInServer, postUserInServer } from '../../server';
 import { BlockInput } from '../Form/BlockInput';
 import { TextArea } from '../Form/TextArea';
 import './Style/privateOffice.css';
@@ -22,7 +22,7 @@ export const AddOrder = () => {
 		dispatch(createPromptArray(arr));
 		if (arr.length !== 0) return;
 		console.log('данные отправлены');
-		postDataInServer('orderAPI', newOrder)
+		postUserInServer('orderAPI', newOrder)
 		.then(res => console.log(res))
 		.catch(error => console.log(error))
 		// setAnswer(answer => ({...answer, id: item.id}))

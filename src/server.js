@@ -50,23 +50,30 @@ export const postDataInServer = (api, data) => {
 };
 
 
-
-
-
-
-export const postregistrInServer = (api, data) => {
+export const postUserInServer = (api, data) => {
 	return fetch(getAPI[api], {
 		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(data),
-		// mode: 'no-cors',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(data)
 		})
-		.then(response => {
-			response.json()
-		});
+		.then(response => response.json());
 };
+
+
+
+// export const postregistrInServer = (api, data) => {
+// 	return fetch(getAPI[api], {
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 		},
+// 		body: JSON.stringify(data),
+// 		// mode: 'no-cors',
+// 		})
+// 		.then(response => {
+// 			response.json()
+// 		});
+// };
 
 
 
