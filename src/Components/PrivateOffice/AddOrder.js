@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { checkInput } from '../../checkInput';
 import { createPromptArray } from '../../redux/actions';
-import { postDataInServer, postUserInServer } from '../../server';
+import { postUserInServer } from '../../server';
 import { BlockInput } from '../Form/BlockInput';
 import { TextArea } from '../Form/TextArea';
 import './Style/privateOffice.css';
