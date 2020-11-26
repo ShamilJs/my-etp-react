@@ -10,7 +10,7 @@ export const checkInput = (user, place, arg, checkPolicy) => {
 			if ((!user.last_name || user.last_name === '')) arr.push('last_name');
 			if ((!user.login || user.login === '')) arr.push('login');
 			if ((!user.inn || user.inn === '')) arr.push('inn');
-			if ((!user.ogrn || user.ogrn === '')) arr.push('ogrn');
+			if ((!user.ogrnip || user.ogrnip === '')) arr.push('ogrnip');
 			if ((!user.email || user.email === '')) arr.push('email');
 			if ((!user.password || user.password === '')) arr.push('password');
 			if ((!user.password_repeat || user.password_repeat === '')) arr.push('password_repeat');
@@ -22,7 +22,7 @@ export const checkInput = (user, place, arg, checkPolicy) => {
 			if ((!user.last_name || user.last_name === '')) arr.push('last_name');
 			if ((!user.login || user.login === '')) arr.push('login');
 			if ((!user.inn || user.inn === '')) arr.push('inn');
-			if ((!user.orgrnip || user.orgrnip === '')) arr.push('orgrnip');
+			if ((!user.ogrn || user.ogrn === '')) arr.push('ogrn');
 			if ((!user.organization_name || user.organization_name === '')) arr.push('organization_name');
 			if (!user.actual_address || user.actual_address === '') arr.push('actual_address');
 			if (!user.legal_address || user.legal_address === '') arr.push('legal_address');

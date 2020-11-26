@@ -1,12 +1,19 @@
-import React from 'react';
-// import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-// import { openWindowRegistration } from '../../redux/actions';
 
 import './Style/header.css';
 
 export const TopHeader = () => {
-    // const dispatch = useDispatch();
+    const userData = useSelector(state => state.auth.userData);
+    const [view, setView] = useState(false)
+    const localUser = JSON.parse(localStorage.getItem('userObjId'));
+
+    useEffect(() => {
+        if (!localUser) setView(false)
+        else setView(true)
+        // eslint-disable-next-line 
+    }, [userData])
 
     return (
         <div className="top-header">
@@ -18,27 +25,18 @@ export const TopHeader = () => {
                                 <p>Добро пожаловать на <span>ЭТП</span></p>
                             </div>
                             <div className="login-faq-earn-money">
-								<Link 
-									className="unblock"
+								{!view && <Link 
                                     to="/registration" 
-                                    // onClick={() => dispatch(openWindowRegistration(false))}
 								>Авторизация | Регистрация
-								</Link>
-                                <Link 
-                                    // className="unblock"
-									to="/private_office"
-								>	<div className="login">
+								</Link>}
+                                {view && <Link to="/private_office">
+									<div className="login">
 										<img className="login__img" src="./pngegg.png" alt=""/>
 									</div>
-                                </Link>
+                                </Link>}
                                 <Link 
-                                // onClick={() => dispatch(openWindowRegistration(false))} 
                                 to="/faq">FAQ</Link>
                             </div>
-                                <div className="auth__menu">
-                                    
-                                    <li><Link to="/exit">Выход</Link></li>
-                                </div>
                         </div>
                     </div>
                 </div>

@@ -96,3 +96,14 @@
 .faq__question button:hover {
 	border-bottom: 3px solid#ffaf02;
 }
+
+.accreditation__ref{
+	font-size: 18px;
+	color: steelblue;
+	text-decoration: underline;
+}
+.accreditation__ref:hover{
+	color: #ffaf02;
+	text-decoration: underline;
+	transition-duration: 500ms;
+}

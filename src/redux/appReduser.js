@@ -5,7 +5,8 @@ import { OPEN_PRIVACY_POLICY,
     HIDE_LOADER,
     OPEN_MODAL_DISCRIPTION,
     CREATE_PROMPT_ARRAY,
-    OPEN_MODAL_HELLO } from './types';
+    OPEN_MODAL_HELLO,
+    OPEN_REQUISITION_EXECUTOR } from './types';
 
 const initiaState = {
 	privacyPolicy: false,
@@ -13,7 +14,8 @@ const initiaState = {
     modalHello: false,
 	promptArray: [],
     place: '',
-    requisitionCard: false,
+	requisitionCard: false,
+	requisitionExecutor: false,
     purchaseRequisition: false,
 	loader: false,
     order: {}
@@ -32,7 +34,9 @@ export const appReduser = (state = initiaState, action) => {
 		case CREATE_PROMPT_ARRAY: 
             return {...state, promptArray: action.payload};
         case OPEN_REQUISITION_CARD: 
-            return {...state, requisitionCard: action.payload, order: action.content};
+			return {...state, requisitionCard: action.payload, order: action.content};
+		case OPEN_REQUISITION_EXECUTOR: 
+            return {...state, requisitionExecutor: action.payload, order: action.content};
         case OPEN_PURCHASE_REQUISITION: 
             return {...state, purchaseRequisition: action.payload};
         case SHOW_LOADER: 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getOrdersFromServer, hideLoader, openRequisitionCard, showLoader } from '../../redux/actions';
+import { getOrdersFromServer, hideLoader, showLoader } from '../../redux/actions';
 import { getDataFromServer } from '../../server';
+import { OrdersItem } from '../Requisition/OrdersItem';
 import './Style/privateOffice.css';
 
 
@@ -28,15 +29,7 @@ export const OrderList = () => {
                 Список всех закупок
             </p>
 			<ul className="requisition__list">
-                {orders.map((order, i) => (
-                    <li key={i} className="requisition__item">
-						<p className="requisition__title">{order.orderName}</p>
-						<button 
-							onClick={() => dispatch(openRequisitionCard(true, order))}
-							className="requisition__button">Подробнее...
-						</button>
-					</li>
-                ))}
+				<OrdersItem orders={orders} keyObj={'admin'}/>
             </ul>
         </div>
     );

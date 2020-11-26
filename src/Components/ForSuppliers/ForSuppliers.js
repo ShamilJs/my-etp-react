@@ -7,7 +7,7 @@ export const ForSuppliers = () => {
     return (
 		<>
       		<MainTitle title={'Поставщикам'}/>
-			<div  className="container h-100  mt-50 mb-70">
+			<div  className="container height_auto  mt-50">
 				<p className="accreditation__title">Информация для поставщиков</p>
                 <p className="accreditation__subtitle">
                     Для работы с заявками в нашей системе Вам необходимо пройти аккредитацию.<br/>

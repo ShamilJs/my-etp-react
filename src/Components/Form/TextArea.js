@@ -16,8 +16,7 @@ export const TextArea = ({ name, user, setUser, company = false, answer = false,
 				if (item === name) value = true;
 			});
 		}
-        setShowPrompt(value);
-        // eslint-disable-next-line
+		setShowPrompt(value);
     }, [promptArr]);
     
 

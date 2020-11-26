@@ -8,10 +8,12 @@ import { addNewQuestion,
 	hideLoader,
 	openModalDiscription,
 	showLoader } from '../../redux/actions';
+	import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 
 export const FAQ = () => {
+	const localUser = JSON.parse(localStorage.getItem('userObjId'));
 	const [showPrompt, setShowPrompt] = useState(false)
 	const [openFooter, setOpenFooter] = useState({});
 	const dispatch = useDispatch();
@@ -85,7 +87,10 @@ export const FAQ = () => {
 							</div>
 						</div>
 					))}
-					<form  className="faq__question">
+					{!localUser && <p>Для того, чтобы задать вопрос, пожалуйста
+						<Link className="accreditation__ref" to="/registration"> авторизуйтесь</Link>
+					</p>}
+					{localUser &&<form  className="faq__question">
                         <label htmlFor="info">Задайте вопрос нашей компании. Внимание! 
 							Ваш вопрос будет виден всем посетителям нашего сайта</label>
 						<textarea 
@@ -121,7 +126,7 @@ export const FAQ = () => {
 								setPost(!post)
 							}}
 						>Задать вопрос</button>
-                    </form>
+                    </form>}
 				</div>
 			</div>			
     	</>

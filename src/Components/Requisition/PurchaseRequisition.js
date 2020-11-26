@@ -41,7 +41,7 @@ export const PurchaseRequisition = () => {
 				<div  className="requisition-card__content">
 					<div className="modal__text">                        
 						<p className="requisition-card__title">
-							Заявка на закупку: <span>{order.orderName} Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto excepturi iusto natus fugiat odit sit accusantium? Rerum, nam. Non fuga, dicta vitae aspernatur aperiam consectetur neque vero minus repudiandae?</span>
+							Заявка на закупку: <span>{order.orderName} </span>
 						</p>
 						<p  className="requisition-card__company">
 							Наименование участника: <span>OOO "Siber IT"</span>

@@ -1,12 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { openPurchaseRequisition, openRequisitionCard } from '../../redux/actions';
+import { openPurchaseRequisition, openRequisitionCard, openRequisitionExecuitor } from '../../redux/actions';
 import './Style/requisition.css';
 import { Link } from "react-router-dom";
 
 export const RequisitionCard = () => {
     const dispatch = useDispatch();
-    const order = useSelector(state => state.app.order);
+	const order = useSelector(state => state.app.order);
+	const userData = useSelector(state => state.auth.userData);
+	const requisitionCard = useSelector(state => state.app.requisitionCard);
+
+	if (!requisitionCard) return null
 
     return (
         <div  className="requisition-card">
@@ -47,16 +51,22 @@ export const RequisitionCard = () => {
                 </div>
                 <div onClick={() => dispatch(openRequisitionCard(false))} className="requisition-card__close">X</div>
 				<div className="requisition-card__control">
-					<Link
+					{false && <Link
 						className="requisition-card__ref"
 						to="/information_for_suppliers"
 						onClick={() => dispatch(openRequisitionCard(false))}
 					>К сожалению, Вы не можете участвовать в закупках,
-						т.к. Ваша аккредитация еще не одобрена...</Link>
-					<div 
-						className="requisition-card__response"
-						onClick={() => dispatch(openPurchaseRequisition(true))}
-					>Подать заявку</div>
+						т.к. Ваша аккредитация еще не одобрена...</Link> }
+					{(userData.role !== 'ADMIN') &&
+						<div 
+							className="requisition-card__response"
+							onClick={() => dispatch(openPurchaseRequisition(true))}
+						>Подать заявку</div>}
+					{(userData.role === 'ADMIN') &&
+						<div 
+							className="requisition-card__response"
+							onClick={() => dispatch(openRequisitionExecuitor(true, order))}
+						>Просмотр заявок</div>}
 				</div>
             </div>
         </div>

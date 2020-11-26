@@ -4,9 +4,9 @@ import { BlockInput } from './BlockInput';
 import { TextArea } from './TextArea';
 import { Checkbox } from './Checkbox';
 import { checkInput } from '../../checkInput';
-import { createPromptArray, openModalHello } from '../../redux/actions';
+import { createPromptArray, hideLoader, openModalHello, showLoader, updateUserData } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { postAxios, getAxios} from '../../server';
+import { getAboutUser, postUserInServer} from '../../server';
 
 export const Registr = () => {
 	const promptArr = useSelector(state => state.app.promptArray);
@@ -53,40 +53,48 @@ export const Registr = () => {
 		// eslint-disable-next-line
 	}, [subject]);
 
+
+
+	const getDataAboutUser = (user) => {
+		getAboutUser('aboutUserAPI', user)
+		.then(res => {
+			localStorage.setItem('userObjId', JSON.stringify(user));
+			dispatch(updateUserData(res));
+			dispatch(openModalHello(true, 'Registr'))
+			dispatch(hideLoader())
+		})
+		.catch(err => {
+			console.log(err)
+			dispatch(hideLoader())
+		});
+	}
+
 	const registration = (e) => {
-		getAxios('http://localhost:8080/auth/user?login=swa')
-		// getDataFromServe('newOrganizRegistrAPI')
-		// 	.then(res => console.log(res))
-		// 	.catch(err => console.log(err));
 		e.preventDefault();
 		const arr = checkInput(newUser, 'registr', subject, checkPolicy);
+		
 		dispatch(createPromptArray(arr));
 		if (arr.length !== 0) return;
-		// postregistrInServer('newIPRegistrAPI', newUser)
-		// .then(res => console.log(res))
-		// .catch(err => console.log(err));
-
-
+		dispatch(showLoader())
 		if ((subject === '2')) {
-			postAxios('newOrganizRegistrAPI', newUser);
-			// postregistrInServer('newOrganizRegistrAPI', newUser)
-			// .then(res => console.log(res))
-			// .catch(err => console.log(err));
+			let obj = {}
+			for(let key in newUser) {
+				if (newUser[key] !== '') obj[key] = newUser[key]
+			}
+			postUserInServer('newOrganizRegistrAPI', obj)
+			.then(res => getDataAboutUser(res))
+			.catch(err => {
+				console.log('err: ', err);
+				dispatch(hideLoader())
+			});
 		} else {
-			postAxios('newIPRegistrAPI', newUser);
-			// postregistrInServer('newIPRegistrAPI', newUser)
-			// .then(res => console.log(res))
-			// .catch(err => console.log(err));
+			postUserInServer('newIPRegistrAPI', newUser)
+			.then(res => getDataAboutUser(res))
+			.catch(err => {
+				console.log('err: ', err);
+				dispatch(hideLoader())
+			});
 		}
-		console.log('данные отправлены', newUser);
-		// let obj = {}
-		// for(let key in newUser) {
-		// 	if (newUser[key] !== '') {
-		// 		obj[key] = newUser[key]
-		// 	}
-		// }
-		// console.log(obj);
-		dispatch(openModalHello(true, 'Registr'))
 	}
 
     return (
@@ -115,7 +123,7 @@ export const Registr = () => {
 					<div className="block_flex">
 						{(subject === '2') && <BlockInput user={newUser} setUser={setNewUser} type={'organization_name'}/>}
 						<BlockInput user={newUser} setUser={setNewUser} type={'inn'}/>
-						<BlockInput user={newUser} setUser={setNewUser} type={(subject === '1') ? 'ogrn' : 'orgrnip'}/>
+						<BlockInput user={newUser} setUser={setNewUser} type={(subject === '1') ? 'ogrnip' : 'ogrn'}/>
 					</div>
 
 					{(subject === '2') &&

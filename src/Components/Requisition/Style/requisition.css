@@ -12,6 +12,32 @@
     min-height: 130px;
 }
 
+.execuitor__item{
+    margin-bottom: 20px;
+    background-color: #eef3f6;
+	height: 260px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.execuitor__main{
+	height: 180px;
+	overflow: hidden;
+}
+.execuitor-text{
+	margin-bottom: 5px;
+}
+
+.execuitor-view{
+    height: auto !important;
+}
+
+
+.execuitor-text span{
+	text-decoration: underline;
+	color: teal;
+}
+
 .requisition__control{
     display: flex;
     justify-content: space-between;
@@ -41,13 +67,17 @@
     color: wheat;
     background-color: green;
 }
+.requisition__requisitions span{
+    font-weight: 700;
+    font-size: 12px;
+}
 
 .requisition__button{
     background-color: transparent;
     border: none;
     cursor: pointer;
     color: steelblue;
-    margin: 10px 0 20px 20px;
+    margin: 20px 0 20px 20px;
     font-size: 16px;
     font-weight: 500;
 }

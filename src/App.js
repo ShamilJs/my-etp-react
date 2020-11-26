@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.css';
 import { TopHeader } from './Components/Header/TopHeader';
 import { MainMenu } from './Components/Header/MainMenu';
 import { Preloader } from './Components/Other/Preloader';
-// import { ModalReference } from './Components/Other/ModalReference';
 import { Home } from './Components/Home/Home';
 import { ForSuppliers } from './Components/ForSuppliers/ForSuppliers';
 import { AuthOrRegistr } from './Components/Form/AuthOrRegistr';
@@ -17,65 +16,81 @@ import {
 	Route,
   } from "react-router-dom";
 import { RequisitionCard } from './Components/Requisition/RequisitionCard';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Footer } from './Components/Footer/Footer';
 import { PrivacyPolicy } from './Components/Other/PrivacyPolicy';
 import { PurchaseRequisition } from './Components/Requisition/PurchaseRequisition';
 import { ModalDiscription } from './Components/Other/ModalDiscription';
 import { ModalHello } from './Components/Other/ModalHello';
-
-
+import { ShowRequis } from './Components/Requisition/ShowRequis';
+import { getAboutUser } from './server';
+import { hideLoader, showLoader, updateUserData } from './redux/actions';
   
 
 const App = () => {
+	const localUser = JSON.parse(localStorage.getItem('userObjId'));
+	const dispatch = useDispatch();
 
-	const requisitionCard = useSelector(state => state.app.requisitionCard);
+	useEffect(() => {
+		if (localUser) {
+			dispatch(showLoader())
+			getAboutUser('aboutUserAPI', localUser)
+			.then(res => {
+				dispatch(updateUserData(res));
+				dispatch(hideLoader());
+			})
+			.catch(err => {
+				console.log(err)
+				localStorage.removeItem('userObjId');
+				dispatch(hideLoader())
+			});
+		}
+		// eslint-disable-next-line
+	}, [])
+
 
 	return (
-		<>
 		<Router>
-			<header className="header-area">
-				<TopHeader/>
-				<MainMenu/>
-			</header>
-			{requisitionCard && <RequisitionCard/>}
-			{/* {false && <ModalReference/>} */}
-			<PurchaseRequisition/>
-			<Preloader/>
-			<PrivacyPolicy/>
-			<ModalDiscription/>
-			<ModalHello/>
-				<Switch>
-					<Route exact path="/">
-						<Home/>            
-					</Route>
-					<Route path="/information_for_suppliers">
-						<ForSuppliers/>            
-					</Route>
-					{/* <Route path="/accreditation">
-						<Accreditation/>            
-					</Route> */}
-					<Route path="/requisition">
-						<Requisition/>            
-					</Route>
-					<Route path="/contacts">
-						<Contact/>            
-					</Route>
-					<Route path="/registration">
-						<AuthOrRegistr/>            
-					</Route>
-					<Route path="/faq">
-						<FAQ/>            
-					</Route>
-					<Route path="/private_office">
-						<PrivateOffice/>            
-					</Route>
-					
-				</Switch>
-			<Footer/>
+			<div className="app_body">
+				<header className="header-area">
+					<TopHeader/>
+					<MainMenu/>
+				</header>
+				<div className="main-body">
+					<RequisitionCard/>
+					<PurchaseRequisition/>
+					<ShowRequis/>
+					<Preloader/>
+					<PrivacyPolicy/>
+					<ModalDiscription/>
+					<ModalHello/>
+					<Switch>
+						<Route exact path="/">
+							<Home/>            
+						</Route>
+						<Route path="/information_for_suppliers">
+							<ForSuppliers/>            
+						</Route>
+						<Route path="/requisition">
+							<Requisition/>            
+						</Route>
+						<Route path="/contacts">
+							<Contact/>            
+						</Route>
+						<Route path="/registration">
+							<AuthOrRegistr/>            
+						</Route>
+						<Route path="/faq">
+							<FAQ/>            
+						</Route>
+						<Route path="/private_office">
+							<PrivateOffice/>            
+						</Route>
+					</Switch>
+				</div>
+				<Footer/>
+			</div>
 		</Router>
-		
-		</>
 	);
 }
 

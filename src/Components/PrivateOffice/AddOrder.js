@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { checkInput } from '../../checkInput';
-import { createPromptArray } from '../../redux/actions';
+import { createPromptArray, openModalDiscription } from '../../redux/actions';
 import { postUserInServer } from '../../server';
 import { BlockInput } from '../Form/BlockInput';
 import { TextArea } from '../Form/TextArea';
@@ -23,9 +23,14 @@ export const AddOrder = () => {
 		if (arr.length !== 0) return;
 		console.log('данные отправлены');
 		postUserInServer('orderAPI', newOrder)
-		.then(res => console.log(res))
-		.catch(error => console.log(error))
-		// setAnswer(answer => ({...answer, id: item.id}))
+		.then(() => {
+			dispatch(openModalDiscription(true, 'addOrder'));
+			setOrder({});
+		})
+		.catch(error => {
+			console.log('error: ', error);
+			dispatch(openModalDiscription(true, 'ErrorMessage'));
+		})
 	}
 
     return (

@@ -11,8 +11,17 @@ import { OPEN_PRIVACY_POLICY,
     ADD_NEW_ANSWER,
     CHANGE_QUESTION_STATUS,
     CREATE_PROMPT_ARRAY,
-    OPEN_MODAL_HELLO } from './types';
+    OPEN_MODAL_HELLO,
+    OPEN_REQUISITION_EXECUTOR,
+    UPDATE_USER_DATA,
+    CHECK_LOCAL_USER } from './types';
 
+export const checkLocalUser = user => {
+    return {
+        type: CHECK_LOCAL_USER,
+        payload: user
+    };
+};
 
 export const openPrivacyPolicy = open => {
     return {
@@ -52,6 +61,15 @@ export const openRequisitionCard = (open, order) => {
         content: order
     };
 };
+
+export const openRequisitionExecuitor = (open, order) => {
+    return {
+        type: OPEN_REQUISITION_EXECUTOR,
+        payload: open,
+        content: order
+    };
+};
+
 
 export const openPurchaseRequisition = (open) => {
     return {
@@ -112,6 +130,13 @@ export const changeQuestionStatus = (id) => {
         type: CHANGE_QUESTION_STATUS,
         payload: true,
         id: id
+    };
+};
+
+export const updateUserData = (user) => {
+    return {
+        type: UPDATE_USER_DATA,
+        payload: user,
     };
 };
 
